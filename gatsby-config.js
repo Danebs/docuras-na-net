@@ -1,16 +1,19 @@
-const { APP_NAME, GA_MEASUREMENT_ID }= require('gatsby-plugin-config').default;
+require('dotenv').config({
+  path: '.env',
+});
+const config = require('gatsby-plugin-config').default;
 
 module.exports = {
   siteMetadata: {
-    title: APP_NAME,
+    title: config.APP_NAME,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatsby + Node.js (TypeScript) API',
-        short_name: 'Gatsby + Node.js (TypeScript)',
+        name: config.APP_NAME,
+        short_name: config.APP_NAME,
         start_url: '/',
         icon: 'src/images/gatsby-icon.png',
       },
@@ -19,26 +22,16 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: GA_MEASUREMENT_ID,
+        trackingId: config.GA_TRACKING_ID,
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Avoids sending pageview hits from custom paths
-        // exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "docurasnana.com",
+        head: true
       },
     },
     `gatsby-plugin-sass`,
     { 
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true, // Print removed selectors and processed file names
+        printRejected: false, // Print removed selectors and processed file names
         // develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'], // Don't remove this selector
