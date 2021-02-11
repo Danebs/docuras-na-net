@@ -1,18 +1,69 @@
 
 // Required
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-
-// Optional
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
-@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/bootstrap";
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
+$theme-color: #3E3230;
+$secondary-color: #D6C5BD;
+
 h1, h2, h3, h4, h5, h6, p, b, span, a {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Glacial Indifference', 'Noto Sans JP', sans-serif;
+}
+
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+main {
+  min-height: 800px;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+.text-theme {
+  color: $theme-color;
+}
+
+.bg-theme {
+  background-color: $theme-color;
+}
+
+.bg-secondary-theme {
+  background-color: $secondary-color;
+}
+
+.bold {
+  font-weight: bold;
 }

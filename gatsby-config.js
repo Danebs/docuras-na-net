@@ -1,6 +1,7 @@
 require('dotenv').config({
   path: '.env',
 });
+
 const config = require('gatsby-plugin-config').default;
 
 module.exports = {
@@ -38,7 +39,8 @@ module.exports = {
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       }
-    }
+    },
+    `gatsby-plugin-fontawesome-css`
   ],
 };
 
