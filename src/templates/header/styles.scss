@@ -1,0 +1,107 @@
+@import '../../styles/index.scss';
+
+.main-header {
+    padding: 5px 0;
+}
+
+.main-header .logo-brand {
+    text-align: center;
+}
+
+.main-header nav {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.main-header nav a {
+    color: $theme-color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all linear 0.350s;
+    text-align: center;
+
+    &:not(:first-child) {
+        margin-left: 17.5px;
+    }
+
+    &:hover {
+        color: darken($theme-color, 5%);
+        text-decoration: none;
+        font-size: 1.57rem;
+    }
+}
+
+.main-header .actions {
+    text-align: center;
+    margin-top: 15px;
+
+    & a {
+        color: $theme-color;
+        font-size: 0.85rem;
+    }
+
+    & a:not(:last-child) {
+        margin-right: 17.5px;
+    }
+
+    & a:hover {
+        text-decoration: none;
+        color: darken($theme-color, 25%);
+        transition: all ease-in 0.15s;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .main-header {
+        padding: 7.5px 0;
+    }
+
+    .main-header > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .main-header nav {
+        text-align: justify;
+    }
+    
+    .main-header nav a {
+        font-size: 1.5rem;
+
+        &:not(:first-child) {
+            margin-left: 17.5px;
+        }
+    
+        &:hover {
+            color: darken($theme-color, 5%);
+            text-decoration: none;
+            font-size: 1.57rem;
+        }
+    }
+    
+    .main-header .actions {
+        margin-bottom: 70px;
+
+        & a {
+            color: $theme-color;
+            font-size: 0.85rem;
+        }
+    
+        & a:not(:last-child) {
+            margin-right: 17.5px;
+        }
+    
+        & a:hover {
+            text-decoration: none;
+            color: darken($theme-color, 25%);
+            transition: all ease-in 0.15s;
+        }
+    }
+}
+
+.svg-divisor {
+    width: 100%;
+}
