@@ -1,12 +1,10 @@
 import React from 'react'
 import './styles.scss'
 
-const screenWidth = window.document.documentElement.clientWidth
-
 export default () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="svg-divisor" height="57.05" viewBox="0 0 1378.758 57.05">
         <defs>
-            <filter id="Path_1" x="0" y="0" width={screenWidth * 25} height="57.05" filterUnits="userSpaceOnUse">
+            <filter id="Path_1" x="0" y="0" width="100%" height="57.05" filterUnits="userSpaceOnUse">
             <feOffset dy="3" input="SourceAlpha"/>
             <feGaussianBlur stdDeviation="3" result="blur"/>
             <feFlood flood-color="#ccc" flood-opacity="0.361"/>
